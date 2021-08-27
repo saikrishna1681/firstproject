@@ -7,7 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
   
-class MyTestMail extends Mailable 
+class DailyRemainderMail extends Mailable 
 {
     use Queueable, SerializesModels;
   
@@ -18,10 +18,9 @@ class MyTestMail extends Mailable
      *
      * @return void
      */
-    public function __construct($details,$username)
+    public function __construct($list)
     {
-        $this->details = $details;
-        $this->username=$username;
+        $this->list=$list;
     }
    
     /**
@@ -32,8 +31,7 @@ class MyTestMail extends Mailable
     public function build()
     {
         //return $this->view('mail')->with(['token'=>$this->details['token']]);
-        return $this->view('mail')->with(['token'=>$this->details , 'username'=>$this->username]);
-        //return '<p><a href = "http://localhost:8000/verify/{{ $token }}">{{token}} </a> to verify</p>'+$this->details['token'];
+        return $this->view('dailyremaindermail')->with(['list'=>$this->list]);
     }
 }
 

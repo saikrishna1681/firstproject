@@ -24,12 +24,22 @@ $router->get('/signup',function() {
 $router->get('/login',function(){
     return view('login');
 });
-$router->post('/logout','UserController@logout');
+$router->get('/logout',['middleware'=>'user','uses'=>'UserController@logout']);
+$router->get('/userlist','UserController@userlist');
 $router->post('/loginuser','UserController@login');
-Route::get('sendmail', function () {
-   
-    
-   
-    //dd("Email is Sent.");
-});
-$router->get('/verify/{token}','UserController@verify');
+$router->get('/verify/{username}/{token}','UserController@verify');
+$router->get('/setcookie','UserController@setcookie');
+$router->get('/getcookie','UserController@getcookie');
+$router->get('/tasklistall','UserController@tasklistall');
+$router->post('getusertask','UserController@getusertask');
+$router->post("/assigntask","UserController@assigntask");
+$router->post("/deleteuser","UserController@deleteuser");
+$router->post("updatetaskstatus","UserController@updatetaskstatus");
+$router->get("/checkcookie","UserController@checkcookie");
+$router->post("/changepassword","UserController@changepassword");
+$router->get("updatedatabase","UserController@updatedatabase");
+$router->get("tasklistallstats","UserController@tasklistallstats");
+$router->post("tasklistuserstats","UserController@tasklistuserstats");
+$router->post("getusernamefromid","UserController@getusernamefromid");
+$router->post("getadminstatus","UserController@getadminstatus");
+$router->post("changeadminstatus","UserController@changeadminstatus");

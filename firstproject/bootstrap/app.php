@@ -28,6 +28,7 @@ $app = new Laravel\Lumen\Application(
  $app->withEloquent();
 
  $app->register(Illuminate\Mail\MailServiceProvider::class);
+ $app->register(Flipbox\LumenGenerator\LumenGeneratorServiceProvider::class);
 
  $app->configure('mail');
 
@@ -87,10 +88,14 @@ $app->configure('app');
 //     App\Http\Middleware\ExampleMiddleware::class
 // ]);
 
-// $app->routeMiddleware([
-//     'auth' => App\Http\Middleware\Authenticate::class,
-// ]);
+ $app->routeMiddleware([
+     'auth' => App\Http\Middleware\Authenticate::class,
+     'user'=> App\Http\Middleware\UserMiddleware::class,
+ ]);
 
+$app->middleware([
+    'cors' => App\Http\Middleware\CorsMiddleware::class
+]);
 /*
 |--------------------------------------------------------------------------
 | Register Service Providers
@@ -104,7 +109,9 @@ $app->configure('app');
 
 // $app->register(App\Providers\AppServiceProvider::class);
 // $app->register(App\Providers\AuthServiceProvider::class);
-// $app->register(App\Providers\EventServiceProvider::class);
+ $app->register(App\Providers\EventServiceProvider::class);
+$app->register(Anik\Amqp\ServiceProviders\AmqpServiceProvider::class);
+//$app->register(Illuminate\Notifications\NotificationServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------
