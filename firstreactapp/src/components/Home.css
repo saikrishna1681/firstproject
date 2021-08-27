@@ -1,0 +1,169 @@
+
+body {
+  margin: 10px;
+}
+
+
+
+li a {
+  display: inline;
+  color: white;
+  position: relative;
+  text-align: center;
+  padding: 0px 60px;
+  text-decoration: none;
+}
+
+li a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+
+
+nav {
+   margin: 0;
+   padding: 0;
+   width: 150px;
+   background-color: black;
+   position: relative;
+   height: 640px;
+   overflow: auto;
+}
+nav a {
+   display: block;
+   color: rgb(255, 255, 255);
+   font-weight: bolder;
+   font-size: 20px;
+   padding: 16px;
+
+   text-decoration: none;
+}
+nav a.selected {
+   background-color: rgb(0, 189, 0);
+   color: rgb(255, 255, 255);
+}
+nav a:hover:not(.selected) {
+   background-color: white;
+   color: blue;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #000;
+}
+.active {
+    background-color: #4CAF50;
+    color: white;
+}
+li {
+  border-bottom: 0px solid  black;
+  display: inline;
+  width: 100%;
+  padding: 0px 0px;
+  position: relative;
+  /*background-color: black;*/
+
+}
+label{
+
+  color: white;
+
+}
+
+.blue_color{
+  color: blue;
+  width: 100px;
+  height: 30px;
+  /*background-color: green;*/
+  text-align: left;
+  float: left;
+  font-size: 20px;
+  
+}
+.link_class{
+  width: 400px;
+  /*background-color: green;*/
+  text-align: left;
+  float: left;
+  font-size: 25px;
+  color: red;
+  font-weight: bold;
+}
+.blue_color1{
+  color: blue;
+  width: 180px;
+  height: 20px;
+  font-style: bold;
+  /*background-color: green;*/
+  text-align: left;
+  float: left;
+  font-size: 20px;
+}
+.blue_color2{
+  color: red ;
+  width: 600px;
+  height: 30px;
+ 
+  /*background-color: green;*/
+  text-align: left;
+  float: left;
+  font-size: 20px;
+}
+
+.search[type=text] {
+  float: center;
+  width: 500px;
+  padding: 6px;
+  border: 1px solid black;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+.leftalign{
+  float: left;
+}
+.displaylabel
+{
+  color: black;
+  float: left;
+  
+}
+.rightdisplay
+{
+  margin-left: 200px;
+}
+.sideBar
+{
+  float: left;
+  width: 150px;
+  height: 750px;
+}
+.horizontalbar
+{
+  width: 1500px;
+  float: left;
+}
+.label_class
+{
+    width: 180px;
+    font-style: normal;
+    height: 20px;
+    font-size: 20px;
+    text-align: left;
+    color: black;
+    float: left;
+}
+.rightdisplay1
+{
+  margin-left: 200px;
+  width: 1500px;
+}
